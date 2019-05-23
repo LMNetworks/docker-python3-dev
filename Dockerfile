@@ -1,6 +1,6 @@
-FROM lmnetworks/python3:3.6.8_20190401
+FROM lmnetworks/python3:3.6.8_20190523
 
-LABEL org.alpine.version="3.9.2"
+LABEL org.alpine.version="3.9.4"
 LABEL image_name="lmnetworks/python3-dev"
 LABEL maintainer="info@lm-net.it"
 
