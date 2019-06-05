@@ -5,6 +5,7 @@ LABEL maintainer="info@lm-net.it"
 
 # currently Alpine Linux v3.9 has Python-3.6 but no PyLint
 # and Alpine Linux edge has PyLint but packaged for Python-3.7
+# hadolint ignore=DL3013,DL3018,DL3019
 RUN apk update && \
     apk add py3-isort py3-mccabe py3-six && \
     apk add --virtual .build-dependencies gcc musl-dev python3-dev && \
