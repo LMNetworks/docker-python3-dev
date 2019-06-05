@@ -3,6 +3,7 @@
 Python3 image based on [`lmnetworks/python3`](https://hub.docker.com/r/lmnetworks/python3) with development tools.
 
 Tools included in this image:
+* [isort](https://github.com/timothycrosley/isort) to lint `import`s
 * [PyLint](https://www.pylint.org) for syntax and style checks
 * [wheel](https://github.com/pypa/wheel) for packaging
 
