@@ -1,14 +1,11 @@
-FROM lmnetworks/python3:3.6.8_20190523
+FROM lmnetworks/python3:3.7.3_20190625
 
 LABEL image_name="lmnetworks/python3-dev"
 LABEL maintainer="info@lm-net.it"
 
-# currently Alpine Linux v3.9 has Python-3.6 but no PyLint
-# and Alpine Linux edge has PyLint but packaged for Python-3.7
+# currently Alpine Linux v3.10 has Python-3.7 but no PyLint
 # hadolint ignore=DL3013,DL3018,DL3019
-RUN apk update && \
-    apk add py3-isort py3-mccabe py3-six && \
-    apk add --virtual .build-dependencies gcc musl-dev python3-dev && \
-    pip3 install pylint wheel && \
-    apk del .build-dependencies && \
+RUN echo '@edge_testing http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
+    apk add --no-cache py3-isort=4.3.19-r0 py3-pylint@edge_testing=2.3.1-r0 && \
+    pip3 install wheel && \
     rm -rf /root/.cache /var/cache/apk/*
