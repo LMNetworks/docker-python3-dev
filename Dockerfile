@@ -1,4 +1,4 @@
-FROM lmnetworks/python3:3.7.3_20190625
+FROM lmnetworks/python3:3.7.3_20190723
 
 LABEL image_name="lmnetworks/python3-dev"
 LABEL maintainer="info@lm-net.it"
